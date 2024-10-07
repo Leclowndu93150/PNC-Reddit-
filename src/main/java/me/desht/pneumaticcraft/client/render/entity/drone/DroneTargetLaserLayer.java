@@ -29,7 +29,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 
-public class DroneTargetLaserLayer extends RenderLayer<AbstractDroneEntity, ModelDrone> {
+public class DroneTargetLaserLayer extends RenderLayer<AbstractDroneEntity, AllayDroneModel> {
     DroneTargetLaserLayer(RenderDrone rendererer) {
         super(rendererer);
     }

@@ -31,7 +31,7 @@ import net.minecraft.world.level.Level;
 
 import javax.annotation.Nonnull;
 
-public class DroneHeldItemLayer extends RenderLayer<AbstractDroneEntity, ModelDrone> {
+public class DroneHeldItemLayer extends RenderLayer<AbstractDroneEntity, AllayDroneModel> {
     DroneHeldItemLayer(RenderDrone renderer) {
         super(renderer);
     }

@@ -47,6 +47,7 @@ import me.desht.pneumaticcraft.common.item.MicromissilesItem;
 import me.desht.pneumaticcraft.common.pneumatic_armor.CommonUpgradeHandlers;
 import me.desht.pneumaticcraft.common.registry.*;
 import me.desht.pneumaticcraft.common.thirdparty.ThirdPartyManager;
+import net.minecraft.client.model.AllayModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.LayerDefinitions;
@@ -230,13 +231,13 @@ public class ClientSetup {
 
     private static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         // drones
-        event.registerEntityRenderer(ModEntityTypes.DRONE.get(), RenderDrone::standard);
-        event.registerEntityRenderer(ModEntityTypes.AMADRONE.get(), RenderDrone::amadrone);
-        event.registerEntityRenderer(ModEntityTypes.LOGISTICS_DRONE.get(), RenderDrone::logistics);
-        event.registerEntityRenderer(ModEntityTypes.HARVESTING_DRONE.get(), RenderDrone::harvesting);
-        event.registerEntityRenderer(ModEntityTypes.GUARD_DRONE.get(), RenderDrone::guard);
-        event.registerEntityRenderer(ModEntityTypes.COLLECTOR_DRONE.get(), RenderDrone::collector);
-        event.registerEntityRenderer(ModEntityTypes.PROGRAMMABLE_CONTROLLER.get(), RenderDrone::programmableController);
+        event.registerEntityRenderer(ModEntityTypes.DRONE.get(), RenderDrone::new);
+        event.registerEntityRenderer(ModEntityTypes.AMADRONE.get(), RenderDrone::new);
+        event.registerEntityRenderer(ModEntityTypes.LOGISTICS_DRONE.get(), RenderDrone::new);
+        event.registerEntityRenderer(ModEntityTypes.HARVESTING_DRONE.get(), RenderDrone::new);
+        event.registerEntityRenderer(ModEntityTypes.GUARD_DRONE.get(), RenderDrone::new);
+        event.registerEntityRenderer(ModEntityTypes.COLLECTOR_DRONE.get(), RenderDrone::new);
+        event.registerEntityRenderer(ModEntityTypes.PROGRAMMABLE_CONTROLLER.get(), RenderDrone::new);
 
         // semiblocks
         event.registerEntityRenderer(ModEntityTypes.CROP_SUPPORT.get(), RenderCropSupport::new);

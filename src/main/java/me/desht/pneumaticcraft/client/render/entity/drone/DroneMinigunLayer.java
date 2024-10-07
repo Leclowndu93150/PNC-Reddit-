@@ -28,7 +28,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 
-public class DroneMinigunLayer extends RenderLayer<AbstractDroneEntity, ModelDrone> {
+public class DroneMinigunLayer extends RenderLayer<AbstractDroneEntity, AllayDroneModel> {
     private final ModelMinigun modelDroneMinigun;
 
     DroneMinigunLayer(RenderDrone renderer) {

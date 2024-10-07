@@ -20,6 +20,7 @@ package me.desht.pneumaticcraft.client.render.entity.drone;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import me.desht.pneumaticcraft.client.model.entity.drone.ModelAllayDrone;
 import me.desht.pneumaticcraft.client.model.entity.drone.ModelDrone;
 import me.desht.pneumaticcraft.client.util.ProgressingLine;
 import me.desht.pneumaticcraft.client.util.RenderUtils;
@@ -29,7 +30,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 
-public class DroneTargetLaserLayer extends RenderLayer<AbstractDroneEntity, ModelDrone> {
+public class DroneTargetLaserLayer extends RenderLayer<AbstractDroneEntity, ModelAllayDrone> {
     DroneTargetLaserLayer(RenderDrone rendererer) {
         super(rendererer);
     }

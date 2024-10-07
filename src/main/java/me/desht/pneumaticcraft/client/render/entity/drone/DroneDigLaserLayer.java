@@ -20,6 +20,7 @@ package me.desht.pneumaticcraft.client.render.entity.drone;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import me.desht.pneumaticcraft.client.model.entity.drone.ModelAllayDrone;
 import me.desht.pneumaticcraft.client.model.entity.drone.ModelDrone;
 import me.desht.pneumaticcraft.client.render.ModRenderTypes;
 import me.desht.pneumaticcraft.client.util.RenderUtils;
@@ -36,10 +37,10 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.joml.Matrix4f;
 
-public class DroneDigLaserLayer extends RenderLayer<AbstractDroneEntity, ModelDrone> {
+public class DroneDigLaserLayer extends RenderLayer<AbstractDroneEntity, ModelAllayDrone> {
     private static final float LASER_SIZE = 0.4f;
 
-    DroneDigLaserLayer(RenderLayerParent<AbstractDroneEntity, ModelDrone> entityRendererIn) {
+    DroneDigLaserLayer(RenderLayerParent<AbstractDroneEntity, ModelAllayDrone> entityRendererIn) {
         super(entityRendererIn);
     }
 

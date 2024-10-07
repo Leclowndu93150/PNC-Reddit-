@@ -19,6 +19,7 @@ package me.desht.pneumaticcraft.client.render.entity.drone;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import me.desht.pneumaticcraft.client.model.entity.drone.ModelAllayDrone;
 import me.desht.pneumaticcraft.client.model.entity.drone.ModelDrone;
 import me.desht.pneumaticcraft.common.entity.drone.AbstractDroneEntity;
 import me.desht.pneumaticcraft.common.item.minigun.AbstractGunAmmoItem;
@@ -31,7 +32,7 @@ import net.minecraft.world.level.Level;
 
 import javax.annotation.Nonnull;
 
-public class DroneHeldItemLayer extends RenderLayer<AbstractDroneEntity, ModelDrone> {
+public class DroneHeldItemLayer extends RenderLayer<AbstractDroneEntity, ModelAllayDrone> {
     DroneHeldItemLayer(RenderDrone renderer) {
         super(renderer);
     }

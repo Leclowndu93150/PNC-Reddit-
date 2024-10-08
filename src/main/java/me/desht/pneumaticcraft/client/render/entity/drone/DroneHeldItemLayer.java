@@ -35,9 +35,8 @@ public class DroneHeldItemLayer extends RenderLayer<AbstractDroneEntity, ModelAl
     private void renderHeldItem(@Nonnull ItemStack stack, PoseStack matrixStack, MultiBufferSource buffer, int packedLight, int packedOverlay, Level level, AbstractDroneEntity drone) {
         matrixStack.pushPose();
 
-        // Lower the item by 1 block (was 1.5, now 0.5)
-        matrixStack.translate(-0.05D, 1.5D, -1.55D); // Move the item forward (-Z) to place it in front of the drone
-
+        //matrixStack.translate(-0.05D, 1.5D, -1.55D); // Move the item forward (-Z) to place it in front of the drone
+        matrixStack.translate(-0.05D, 1.5D, -1.55D);
         matrixStack.mulPose(Axis.YP.rotationDegrees(-90));
 
         this.getParentModel().translateToHand(drone.getMainArm(), matrixStack);

@@ -170,7 +170,9 @@ public class EntityPathNavigateDrone extends FlyingPathNavigation implements IPa
 
     @Override
     public void tick() {
-        ++tick;
+        super.tick(); // Keep the original tick behavior
+
+        // Check if the drone is going to teleport
         if (isGoingToTeleport()) {
             if (teleportCounter == 0 || teleportCounter == 60) {
                 droneEntity.level().playSound(null, droneEntity.blockPosition(), ModSounds.HUD_INIT.get(), SoundSource.NEUTRAL, 0.3f, teleportCounter == 0 ? 0.7F : 1F);
@@ -210,13 +212,32 @@ public class EntityPathNavigateDrone extends FlyingPathNavigation implements IPa
                         stuckTicks = 0;
                     }
                     if (!isDone()) {
+                        // Get the next point in the path
                         Vec3 vec32 = path.getNextEntityPos(mob);
+
+                        // Calculate the direction vector from drone to next position
+                        double deltaX = vec32.x - droneEntity.getX();
+                        double deltaY = vec32.y - (droneEntity.getY() + droneEntity.getEyeHeight());
+                        double deltaZ = vec32.z - droneEntity.getZ();
+
+                        // Calculate yaw and pitch using trigonometry
+                        double distanceXZ = Math.sqrt(deltaX * deltaX + deltaZ * deltaZ);
+                        float yaw = (float)(Math.atan2(deltaZ, deltaX) * (180.0 / Math.PI)) - 90.0F;
+                        float pitch = (float)(-(Math.atan2(deltaY, distanceXZ) * (180.0 / Math.PI)));
+
+                        // Apply rotation to the drone
+                        droneEntity.setYRot(yaw);  // Yaw (horizontal rotation)
+                        droneEntity.setXRot(pitch); // Pitch (vertical rotation)
+
+                        // Move to the next point
                         mob.getMoveControl().setWantedPosition(vec32.x, vec32.y, vec32.z, speedModifier);
+                        mob.yBodyRot = mob.yHeadRot = yaw; // Sync body and head rotation
                     }
                 }
             }
         }
     }
+
 
     public void teleport() {
         Vec3 dest = Vec3.atCenterOf(telPos);

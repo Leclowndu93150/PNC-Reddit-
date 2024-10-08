@@ -3,6 +3,7 @@ package me.desht.pneumaticcraft.client.model.entity.drone;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import me.desht.pneumaticcraft.common.entity.drone.AbstractDroneEntity;
+import net.minecraft.client.model.AllayModel;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
@@ -13,10 +14,13 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.AllayRenderer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
+import net.minecraft.world.entity.animal.allay.Allay;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+
 
 @OnlyIn(Dist.CLIENT)
 public class ModelAllayDrone extends HierarchicalModel<AbstractDroneEntity> implements ArmedModel {
@@ -79,7 +83,8 @@ public class ModelAllayDrone extends HierarchicalModel<AbstractDroneEntity> impl
         this.right_wing.yRot = -0.7853982F + $$7;
         this.left_wing.xRot = 0.43633232F * (1.0F - $$10);
         this.left_wing.yRot = 0.7853982F - $$7;
-        this.body.xRot = $$10 * 0.7853982F;
+        this.body.xRot = this.head.xRot;
+        this.body.yRot = this.head.yRot;
         $$18 = $$12 * Mth.lerp($$10, -1.0471976F, -1.134464F);
         ModelPart var10000 = this.root;
         var10000.y += (float)Math.cos((double)$$9) * 0.25F * $$11;

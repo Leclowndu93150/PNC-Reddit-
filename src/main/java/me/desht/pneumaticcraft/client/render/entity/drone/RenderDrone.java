@@ -15,7 +15,8 @@ public class RenderDrone extends MobRenderer<AbstractDroneEntity, ModelAllayDron
 
     public RenderDrone(EntityRendererProvider.Context p_234551_) {
         super(p_234551_, new ModelAllayDrone(p_234551_.bakeLayer(ModelLayers.ALLAY)), 0.4F);
-        this.addLayer(new ItemInHandLayer<>(this, p_234551_.getItemInHandRenderer()));
+        //this.addLayer(new ItemInHandLayer<>(this, p_234551_.getItemInHandRenderer()));
+        addLayer(new DroneHeldItemLayer(this, p_234551_.getItemInHandRenderer()));
     }
 
     @Override
